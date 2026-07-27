@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================
+         LOADING SCREEN
+    =========================== -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-heart">❤️</div>
+
+            <h1>For You</h1>
+
+            <p>Preparing something for you...</p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+         MAIN SCENE
+    =========================== -->
+
+    <main id="mainScene" class="hidden">
+
+        <div class="background-glow"></div>
+
+        <!-- Sparkles -->
+
+        <span class="sparkle s1">✨</span>
+        <span class="sparkle s2">✨</span>
+        <span class="sparkle s3">✨</span>
+        <span class="sparkle s4">✨</span>
+
+        <!-- Card -->
+
+        <div class="card" id="card">
+
+            <!-- FRONT COVER -->
+
+            <div class="cover">
+
+                <h1>It's For You, Beby</h1>
+
+                <p>Open when you're ready.</p>
+
+            </div>
+
+            <!-- INSIDE -->
+
+<div class="inside" id="letterPage">
+
+    <h2>To My Favorite Person,</h2>
+
+    <p id="typing"></p>
+
+</div>
+
+        </div>
+
+    </main>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,558 @@
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+/* ======================================
+   BACKGROUND
+====================================== */
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffe5ec,
+        #ffd6e0,
+        #fff1f5
+    );
+
+}
+
+/* ======================================
+   MAIN SCENE
+====================================== */
+
+main{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ======================================
+   SOFT GLOW
+====================================== */
+
+.background-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(255,255,255,.75),
+        transparent 70%
+    );
+
+    filter:blur(80px);
+
+}
+
+/* ======================================
+   CARD
+====================================== */
+
+.card{
+
+    position:relative;
+
+    width:1100px;
+    height:700px;
+
+    transform-style:preserve-3d;
+
+    perspective:2500px;
+
+    cursor:pointer;
+
+    transition:
+        transform 1s ease,
+        filter 1s ease;
+
+    filter:
+    drop-shadow(
+        0 40px 80px rgba(0,0,0,.18)
+    );
+
+}
+
+/* Hover */
+
+.card:hover:not(.open){
+
+    transform:
+    translateY(-8px);
+
+}
+
+/* ======================================
+   FRONT COVER
+====================================== */
+
+.cover{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff8fab,
+        #ff5d8f
+    );
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    transform-origin:left;
+
+    transition:transform 1.3s ease;
+
+    z-index:5;
+
+    backface-visibility:hidden;
+
+}
+
+.cover h1{
+
+    width:70%;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:64px;
+
+    line-height:1.2;
+
+}
+
+.cover p{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    letter-spacing:2px;
+
+}
+
+/* ======================================
+   INSIDE
+====================================== */
+
+.inside{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffdf9,
+        #fff6e8
+    );
+
+    border-radius:18px;
+
+    padding:70px;
+
+    box-shadow:
+    inset 0 0 30px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+
+}
+
+/* ======================================
+   LETTER
+====================================== */
+
+.inside h2{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:58px;
+
+    color:#c9184a;
+
+    margin-bottom:35px;
+
+}
+
+.inside p{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    line-height:2;
+
+    color:#5b4545;
+
+    white-space:pre-wrap;
+
+}
+
+/* ======================================
+   OPEN EFFECT
+====================================== */
+
+.card.open .cover{
+
+    transform:
+    rotateY(-180deg);
+
+}
+
+.card.open{
+
+    transform:
+    translateY(-12px);
+
+}
+
+/* ======================================
+   LOADER
+====================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#fff4f7;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-heart{
+
+    font-size:70px;
+
+    animation:
+    pulse 1.5s infinite;
+
+}
+
+.loader-content h1{
+
+    margin-top:15px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:55px;
+
+    color:#d6336c;
+
+}
+
+.loader-content p{
+
+    margin-top:10px;
+
+    color:#777;
+
+}
+
+.loading-bar{
+
+    width:250px;
+    height:7px;
+
+    background:#eee;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:30px auto;
+
+}
+
+.loading-progress{
+
+    width:100%;
+    height:100%;
+
+    background:#ff6b9a;
+
+    animation:
+    loading 3s linear;
+
+}
+
+/* ======================================
+   SPARKLES
+====================================== */
+
+.sparkle{
+
+    position:absolute;
+
+    font-size:22px;
+
+    animation:
+    float 5s ease-in-out infinite;
+
+}
+
+.s1{top:15%;left:12%;}
+.s2{top:22%;right:15%;}
+.s3{bottom:18%;left:20%;}
+.s4{bottom:12%;right:18%;}
+
+/* ======================================
+   ANIMATIONS
+====================================== */
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media(max-width:900px){
+
+    .card{
+
+        width:95vw;
+        height:85vh;
+
+    }
+
+    .cover h1{
+
+        font-size:40px;
+
+    }
+
+    .inside{
+
+        padding:35px;
+
+    }
+
+    .inside h2{
+
+        font-size:40px;
+
+    }
+
+    .inside p{
+
+        font-size:20px;
+
+        line-height:1.7;
+
+    }
+
+}
+
+/* ======================================
+   FINAL ENDING
+====================================== */
+
+.ending{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,245,247,.96);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 2s ease;
+
+    z-index:999;
+}
+
+.ending.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.ending h2{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:60px;
+
+    color:#d6336c;
+
+    margin-bottom:25px;
+
+}
+
+.ending p{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:24px;
+
+    color:#5b4545;
+
+    line-height:1.9;
+
+}
+
+#readAgain{
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#d6336c;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+#readAgain:hover{
+
+    transform:translateY(-3px);
+
+    background:#c2185b;
+
+}
