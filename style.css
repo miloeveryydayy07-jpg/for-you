@@ -1,6 +1,6 @@
-/* ======================================
-   RESET
-====================================== */
+/* ==========================
+RESET
+========================== */
 
 *{
     margin:0;
@@ -8,378 +8,1051 @@
     box-sizing:border-box;
 }
 
-html,
 body{
 
-    width:100%;
-    height:100%;
-
+    font-family:'Poppins',sans-serif;
     overflow:hidden;
 
-    font-family:"Poppins",sans-serif;
-
-}
-
-/* ======================================
-   BACKGROUND
-====================================== */
-
-body{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
-        #ffe5ec,
-        #ffd6e0,
-        #fff1f5
+        #fff5f8,
+        #ffe6ef,
+        #ffdbe8
     );
 
+    height:100vh;
+
 }
 
-/* ======================================
-   MAIN SCENE
-====================================== */
+/* ==========================
+BACKGROUND
+========================== */
 
-main{
+.container{
 
     width:100%;
     height:100vh;
 
     display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-
-}
-
-.hidden{
-
-    display:none;
-
-}
-
-/* ======================================
-   SOFT GLOW
-====================================== */
-
-.background-glow{
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        rgba(255,255,255,.75),
-        transparent 70%
-    );
-
-    filter:blur(80px);
-
-}
-
-/* ======================================
-   CARD
-====================================== */
-
-.card{
-
-    position:relative;
-
-    width:1100px;
-    height:700px;
-
-    transform-style:preserve-3d;
-
-    perspective:2500px;
-
-    cursor:pointer;
-
-    transition:
-        transform 1s ease,
-        filter 1s ease;
-
-    filter:
-    drop-shadow(
-        0 40px 80px rgba(0,0,0,.18)
-    );
-
-}
-
-/* Hover */
-
-.card:hover:not(.open){
-
-    transform:
-    translateY(-8px);
-
-}
-
-/* ======================================
-   FRONT COVER
-====================================== */
-
-.cover{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff8fab,
-        #ff5d8f
-    );
-
-    border-radius:18px;
-
-    display:flex;
-
     flex-direction:column;
-
-    justify-content:center;
     align-items:center;
 
-    text-align:center;
-
-    color:white;
-
-    transform-origin:left;
-
-    transition:transform 1.3s ease;
-
-    z-index:5;
-
-    backface-visibility:hidden;
+    position:relative;
 
 }
 
-.cover h1{
+/* ==========================
+TITLE
+========================== */
 
-    width:70%;
+.title{
 
-    font-family:"Great Vibes",cursive;
+    margin-top:40px;
 
-    font-size:64px;
+    font-family:'Great Vibes',cursive;
 
-    line-height:1.2;
+    font-size:72px;
+
+    color:#d74f85;
+
+    text-shadow:0 5px 15px rgba(255,100,160,.25);
 
 }
 
-.cover p{
+.subtitle{
 
-    margin-top:25px;
+    margin-top:10px;
+
+    color:#666;
 
     font-size:20px;
 
-    letter-spacing:2px;
+}
+
+/* ==========================
+HEART COLLAGE
+========================== */
+
+.heart{
+
+    margin-top:45px;
+
+    width:560px;
+
+    height:520px;
+
+    position:relative;
 
 }
 
-/* ======================================
-   INSIDE
-====================================== */
+/* ==========================
+PHOTOS
+========================== */
 
-.inside{
+.photo{
 
     position:absolute;
 
-    inset:0;
+    width:82px;
 
-    background:
-    linear-gradient(
-        to bottom,
-        #fffdf9,
-        #fff6e8
-    );
+    height:82px;
 
-    border-radius:18px;
+    object-fit:cover;
 
-    padding:70px;
+    border:5px solid white;
+
+    border-radius:6px;
 
     box-shadow:
-    inset 0 0 30px rgba(0,0,0,.08);
+        0 8px 18px rgba(0,0,0,.18);
 
-    display:flex;
+    transition:.35s;
 
-    flex-direction:column;
+}
 
-    justify-content:flex-start;
+.photo:hover{
 
+    transform:scale(1.12);
+
+    z-index:100;
+
+}
+
+/* top */
+
+.p1{left:200px;top:0;}
+.p2{left:280px;top:0;}
+
+/* second */
+
+.p3{left:120px;top:80px;}
+.p4{left:200px;top:80px;}
+.p5{left:280px;top:80px;}
+.p6{left:360px;top:80px;}
+
+/* third */
+
+.p7{left:80px;top:160px;}
+.p8{left:160px;top:160px;}
+.p9{left:240px;top:160px;}
+.p10{left:320px;top:160px;}
+
+/* ==========================
+BUTTON
+========================== */
+
+#openLetter{
+
+    margin-top:30px;
+
+    border:none;
+
+    background:#ff4d84;
+
+    color:white;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 15px 35px rgba(255,77,132,.35);
+
+}
+
+#openLetter:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+HEARTBEAT
+========================== */
+
+.heartbeat{
+
+    margin-top:25px;
+
+    color:#ff4d84;
+
+    font-size:34px;
+
+    letter-spacing:8px;
+
+}
+
+
+/* =========================================================
+   1ST ANNIVERSARY — LETTER & POLAROID EXPERIENCE
+========================================================= */
+
+
+/* =========================================================
+   LETTER PAGE
+========================================================= */
+
+body.letterPage{
+
+    min-height:100vh;
+
+    height:auto;
+
+    overflow-x:hidden;
     overflow-y:auto;
 
-    scroll-behavior:smooth;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.9),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,190,215,.5),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe4ee,
+            #ffd7e6
+        );
+
+    color:#4a2634;
 
 }
 
-/* ======================================
-   LETTER
-====================================== */
 
-.inside h2{
+/* =========================================================
+   ROMANTIC BACKGROUND
+========================================================= */
 
-    font-family:"Great Vibes",cursive;
-
-    font-size:58px;
-
-    color:#c9184a;
-
-    margin-bottom:35px;
-
-}
-
-.inside p{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:25px;
-
-    line-height:2;
-
-    color:#5b4545;
-
-    white-space:pre-wrap;
-
-}
-
-/* ======================================
-   OPEN EFFECT
-====================================== */
-
-.card.open .cover{
-
-    transform:
-    rotateY(-180deg);
-
-}
-
-.card.open{
-
-    transform:
-    translateY(-12px);
-
-}
-
-/* ======================================
-   LOADER
-====================================== */
-
-#loader{
+.romanticBackground{
 
     position:fixed;
 
     inset:0;
 
-    background:#fff4f7;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
-
-    transition:1s;
-
-}
-
-.loader-content{
-
-    text-align:center;
-
-}
-
-.loader-heart{
-
-    font-size:70px;
-
-    animation:
-    pulse 1.5s infinite;
-
-}
-
-.loader-content h1{
-
-    margin-top:15px;
-
-    font-family:"Great Vibes",cursive;
-
-    font-size:55px;
-
-    color:#d6336c;
-
-}
-
-.loader-content p{
-
-    margin-top:10px;
-
-    color:#777;
-
-}
-
-.loading-bar{
-
-    width:250px;
-    height:7px;
-
-    background:#eee;
-
-    border-radius:20px;
-
     overflow:hidden;
 
-    margin:30px auto;
+    pointer-events:none;
+
+    z-index:0;
 
 }
 
-.loading-progress{
 
-    width:100%;
-    height:100%;
+.floatingHeart{
 
-    background:#ff6b9a;
+    position:absolute;
+
+    bottom:-50px;
+
+    opacity:.7;
 
     animation:
-    loading 3s linear;
+        floatingHeartAnimation
+        8s linear forwards;
 
 }
 
-/* ======================================
-   SPARKLES
-====================================== */
+
+@keyframes floatingHeartAnimation{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.8);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.7;
+
+    }
+
+    80%{
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-110vh)
+            rotate(25deg)
+            scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   FIXED SPARKLES
+========================================================= */
 
 .sparkle{
 
     position:absolute;
 
+    color:#ff78a5;
+
     font-size:22px;
 
+    opacity:.5;
+
     animation:
-    float 5s ease-in-out infinite;
+        sparkleAnimation
+        3s ease-in-out infinite;
 
 }
 
-.s1{top:15%;left:12%;}
-.s2{top:22%;right:15%;}
-.s3{bottom:18%;left:20%;}
-.s4{bottom:12%;right:18%;}
 
-/* ======================================
-   ANIMATIONS
-====================================== */
+.sparkle1{
 
-@keyframes pulse{
+    left:10%;
+    top:20%;
+
+}
+
+
+.sparkle2{
+
+    left:85%;
+    top:18%;
+
+    animation-delay:.7s;
+
+}
+
+
+.sparkle3{
+
+    left:15%;
+    top:75%;
+
+    animation-delay:1.2s;
+
+}
+
+
+.sparkle4{
+
+    left:80%;
+    top:70%;
+
+    animation-delay:1.8s;
+
+}
+
+
+@keyframes sparkleAnimation{
+
+    0%,
+    100%{
+
+        transform:scale(.7) rotate(0deg);
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:scale(1.3) rotate(20deg);
+
+        opacity:.9;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.memorySection{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:none;
+
+    align-items:flex-start;
+
+    justify-content:center;
+
+    padding:70px 20px;
+
+}
+
+.memorySection.active{
+
+    display:flex;
+
+    animation:
+        sectionFade
+        .8s ease forwards;
+
+}
+
+
+@keyframes sectionFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letterContainer{
+
+    width:100%;
+
+    max-width:850px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.paper{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:760px;
+
+    min-height:650px;
+
+    height:auto;
+
+    padding:80px 85px 70px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,249,251,.96)
+        );
+
+    border-radius:5px;
+
+    box-shadow:
+        0 30px 70px rgba(100,30,55,.18),
+        0 5px 15px rgba(100,30,55,.08);
+
+    transform:rotate(-.5deg);
+
+}
+
+
+
+
+.paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:1px solid rgba(215,79,133,.18);
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.wax{
+
+    position:absolute;
+
+    top:-32px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ff6d9c,
+            #c72f64
+        );
+
+    color:white;
+
+    font-size:28px;
+
+    box-shadow:
+        0 8px 18px rgba(160,30,75,.3);
+
+    transition:
+        .6s ease;
+
+    z-index:5;
+
+}
+
+
+.wax.wax-open{
+
+    transform:
+        translateX(-50%)
+        translateY(-25px)
+        scale(.7)
+        rotate(20deg);
+
+    opacity:0;
+
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.letterContent{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+
+.letterSmallTitle{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    color:#c85a82;
+
+    margin-bottom:18px;
+
+}
+
+
+.letterContent h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:58px;
+
+    font-weight:400;
+
+    color:#c63e70;
+
+    margin-bottom:30px;
+
+    text-shadow:
+        0 4px 12px rgba(200,62,112,.15);
+
+}
+
+
+.letterText{
+
+    max-width:610px;
+
+    margin:auto;
+
+    text-align:left;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:#60404d;
+
+    white-space:normal;
+
+}
+
+
+.letterText br + br{
+
+    display:block;
+
+    content:"";
+
+    margin-top:8px;
+
+}
+
+
+/* =========================================================
+   ROMANTIC BUTTON
+========================================================= */
+
+.romanticButton{
+
+    border:none;
+
+    margin-top:35px;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5d91,
+            #d93d72
+        );
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 30px rgba(217,61,114,.28);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.romanticButton:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 18px 35px rgba(217,61,114,.35);
+
+}
+
+
+.romanticButton:active{
+
+    transform:
+        translateY(0)
+        scale(.98);
+
+}
+
+
+/* =========================================================
+   MEMORIES SECTION
+========================================================= */
+
+.memoriesContainer{
+
+    width:100%;
+
+    max-width:1100px;
+
+    text-align:center;
+
+}
+
+
+.sectionLabel{
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:#c85a82;
+
+    margin-bottom:12px;
+
+}
+
+
+.memoriesContainer h2,
+.finalContainer h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:62px;
+
+    font-weight:400;
+
+    color:#c63e70;
+
+    margin-bottom:12px;
+
+}
+
+
+.sectionDescription{
+
+    max-width:600px;
+
+    margin:0 auto 50px;
+
+    line-height:1.8;
+
+    color:#704d5b;
+
+}
+
+
+/* =========================================================
+   POLAROID WALL
+========================================================= */
+
+.polaroidWall{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:650px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    padding:20px;
+
+}
+
+
+/* =========================================================
+   POLAROIDS
+========================================================= */
+
+.polaroid{
+
+    width:245px;
+
+    padding:12px 12px 28px;
+
+    background:#fff;
+
+    box-shadow:
+        0 18px 35px rgba(60,20,35,.2);
+
+    opacity:0;
+
+    transform:
+        translateY(80px)
+        rotate(0deg)
+        scale(.8);
+
+    transition:
+        transform .5s ease,
+        box-shadow .4s ease,
+        opacity .6s ease;
+
+}
+
+
+.polaroid.show{
+
+    opacity:1;
+
+}
+
+
+/* Individual rotations */
+
+.polaroid1{
+
+    transform:
+        translateY(80px)
+        rotate(-7deg)
+        scale(.8);
+
+}
+
+
+.polaroid2{
+
+    transform:
+        translateY(80px)
+        rotate(5deg)
+        scale(.8);
+
+}
+
+
+.polaroid3{
+
+    transform:
+        translateY(80px)
+        rotate(-3deg)
+        scale(.8);
+
+}
+
+
+.polaroid4{
+
+    transform:
+        translateY(80px)
+        rotate(6deg)
+        scale(.8);
+
+}
+
+
+.polaroid5{
+
+    transform:
+        translateY(80px)
+        rotate(-5deg)
+        scale(.8);
+
+}
+
+
+.polaroid6{
+
+    transform:
+        translateY(80px)
+        rotate(3deg)
+        scale(.8);
+
+}
+
+
+/* When JavaScript adds .show */
+
+.polaroid1.show{
+
+    transform:
+        translateY(0)
+        rotate(-7deg)
+        scale(1);
+
+}
+
+
+.polaroid2.show{
+
+    transform:
+        translateY(0)
+        rotate(5deg)
+        scale(1);
+
+}
+
+
+.polaroid3.show{
+
+    transform:
+        translateY(0)
+        rotate(-3deg)
+        scale(1);
+
+}
+
+
+.polaroid4.show{
+
+    transform:
+        translateY(0)
+        rotate(6deg)
+        scale(1);
+
+}
+
+
+.polaroid5.show{
+
+    transform:
+        translateY(0)
+        rotate(-5deg)
+        scale(1);
+
+}
+
+
+.polaroid6.show{
+
+    transform:
+        translateY(0)
+        rotate(3deg)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   POLAROID PHOTO
+========================================================= */
+
+.photoFrame{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+
+    background:#f4e9ed;
+
+}
+
+
+.photoFrame img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.polaroid p{
+
+    margin-top:14px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:24px;
+
+    color:#49313a;
+
+}
+
+
+/* =========================================================
+   POLAROID HOVER
+========================================================= */
+
+.polaroid:hover{
+
+    transform:
+        translateY(-15px)
+        rotate(0deg)
+        scale(1.06) !important;
+
+    z-index:20;
+
+    box-shadow:
+        0 30px 55px rgba(60,20,35,.28);
+
+}
+
+
+.polaroid:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.finalContainer{
+
+    width:100%;
+
+    max-width:750px;
+
+    text-align:center;
+
+}
+
+
+.finalHeart{
+
+    font-size:75px;
+
+    animation:
+        finalHeartbeat
+        1.6s ease-in-out infinite;
+
+}
+
+
+@keyframes finalHeartbeat{
+
+    0%,
+    100%{
+
+        transform:scale(1);
+
+    }
 
     50%{
 
@@ -389,170 +1062,1253 @@ main{
 
 }
 
-@keyframes loading{
 
-    from{
+.finalContainer h2 span{
 
-        width:0;
+    display:block;
 
-    }
-
-    to{
-
-        width:100%;
-
-    }
+    color:#e04a7d;
 
 }
 
-@keyframes float{
 
-    0%,100%{
+.finalMessage{
 
-        transform:translateY(0);
+    margin-top:30px;
 
-    }
+    color:#684553;
 
-    50%{
+    font-size:16px;
 
-        transform:translateY(-12px);
-
-    }
+    line-height:2;
 
 }
 
-/* ======================================
-   MOBILE
-====================================== */
 
-@media(max-width:900px){
+.finalMessage p{
 
-    .card{
-
-        width:95vw;
-        height:85vh;
-
-    }
-
-    .cover h1{
-
-        font-size:40px;
-
-    }
-
-    .inside{
-
-        padding:35px;
-
-    }
-
-    .inside h2{
-
-        font-size:40px;
-
-    }
-
-    .inside p{
-
-        font-size:20px;
-
-        line-height:1.7;
-
-    }
+    margin-bottom:20px;
 
 }
 
-/* ======================================
-   FINAL ENDING
-====================================== */
 
-.ending{
+.finalMessage .highlight{
 
-    position:fixed;
+    margin-top:30px;
 
-    inset:0;
+}
 
-    background:rgba(255,245,247,.96);
+
+.finalMessage h3{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:38px;
+
+    font-weight:400;
+
+    color:#c63e70;
+
+    line-height:1.5;
+
+}
+
+
+.finalMessage h3 span{
+
+    color:#e03d72;
+
+}
+
+
+.foreverMessage{
+
+    margin-top:45px;
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
     justify-content:center;
 
-    align-items:center;
+    gap:30px;
 
-    text-align:center;
+}
 
-    opacity:0;
+
+.foreverMessage span{
+
+    color:#d84d7e;
+
+    font-size:28px;
+
+}
+
+
+.foreverMessage p{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:35px;
+
+    line-height:1.3;
+
+    color:#c63e70;
+
+}
+
+
+.finalSignature{
+
+    margin-top:35px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:30px;
+
+    color:#c63e70;
+
+}
+
+
+/* =========================================================
+   HEART BURST
+========================================================= */
+
+.burstHeart{
+
+    position:fixed;
+
+    z-index:1000;
 
     pointer-events:none;
 
-    transition:opacity 2s ease;
+    font-size:25px;
 
-    z-index:999;
-}
-
-.ending.show{
-
-    opacity:1;
-
-    pointer-events:auto;
+    animation:
+        burstHeartAnimation
+        2.5s ease-out forwards;
 
 }
 
-.ending h2{
 
-    font-family:"Great Vibes",cursive;
+@keyframes burstHeartAnimation{
 
-    font-size:60px;
+    0%{
 
-    color:#d6336c;
+        transform:
+            translate(0,0)
+            scale(.4);
 
-    margin-bottom:25px;
+        opacity:1;
 
-}
+    }
 
-.ending p{
+    100%{
 
-    font-family:"Cormorant Garamond",serif;
+        transform:
+            translate(
+                calc((var(--random-x, 0) - 50) * 1px),
+                calc((var(--random-y, 0) - 50) * 1px)
+            )
+            scale(1.5);
 
-    font-size:24px;
+        opacity:0;
 
-    color:#5b4545;
-
-    line-height:1.9;
-
-}
-
-#readAgain{
-
-    margin-top:40px;
-
-    padding:15px 35px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#d6336c;
-
-    color:white;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-family:"Poppins",sans-serif;
+    }
 
 }
 
-#readAgain:hover{
 
-    transform:translateY(-3px);
+/* =========================================================
+   MOBILE
+========================================================= */
 
-    background:#c2185b;
+@media (max-width:700px){
+
+    body.letterPage{
+
+        overflow-x:hidden;
+
+        overflow-y:auto;
+
+        height:auto;
+
+        min-height:100vh;
+
+    }
+
+
+    .memorySection{
+
+        min-height:100vh;
+
+        height:auto;
+
+        padding:60px 15px 50px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .paper{
+
+        min-height:auto;
+
+        padding:65px 28px 45px;
+
+        margin-top:30px;
+
+    }
+
+
+    .letterContent h1{
+
+        font-size:43px;
+
+        line-height:1.2;
+
+    }
+
+
+    .letterText{
+
+        font-size:14px;
+
+        line-height:1.8;
+
+    }
+
+
+    .wax{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+
+    .memoriesContainer h2,
+    .finalContainer h2{
+
+        font-size:48px;
+
+    }
+
+
+    .sectionDescription{
+
+        font-size:14px;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .polaroidWall{
+
+        min-height:auto;
+
+        gap:30px;
+
+        padding:10px 5px 30px;
+
+    }
+
+
+    .polaroid{
+
+        width:min(280px, 85vw);
+
+    }
+
+
+    .finalContainer{
+
+        padding:20px 10px;
+
+    }
+
+
+    .finalHeart{
+
+        font-size:60px;
+
+    }
+
+
+    .finalMessage{
+
+        font-size:14px;
+
+        line-height:1.8;
+
+    }
+
+
+    .finalMessage h3{
+
+        font-size:32px;
+
+    }
+
+
+    .foreverMessage{
+
+        gap:15px;
+
+    }
+
+
+    .foreverMessage p{
+
+        font-size:30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width:400px){
+
+    .paper{
+
+        padding-left:22px;
+
+        padding-right:22px;
+
+    }
+
+
+    .letterContent h1{
+
+        font-size:38px;
+
+    }
+
+
+    .polaroid{
+
+        width:82vw;
+
+    }
+
+
+    .memoriesContainer h2,
+    .finalContainer h2{
+
+        font-size:43px;
+
+    }
+
+}
+
+/* =========================================================
+   LETTER SCROLL FIX
+========================================================= */
+
+#letterSection{
+
+    min-height:100vh;
+
+    height:auto;
+
+    align-items:flex-start;
+
+}
+
+
+#letterSection .letterContainer{
+
+    padding-bottom:60px;
+
+}
+
+
+#letterSection .paper{
+
+    height:auto;
+
+    min-height:650px;
+
+}
+
+
+/* Desktop */
+
+@media (min-width:701px){
+
+    #letterSection{
+
+        padding-top:90px;
+
+        padding-bottom:90px;
+
+    }
+
+}
+
+
+/* Phone */
+
+@media (max-width:700px){
+
+    #letterSection{
+
+        padding-top:70px;
+
+        padding-bottom:70px;
+
+    }
+
+
+    #letterSection .letterContainer{
+
+        padding-bottom:40px;
+
+    }
+
+
+    #letterSection .paper{
+
+        min-height:0;
+
+        padding-top:60px;
+
+        padding-bottom:50px;
+
+    }
+
+
+    #letterSection .letterText{
+
+        max-height:none;
+
+        overflow:visible;
+
+    }
+
+}
+
+/* =========================================================
+   1ST ANNIVERSARY OPENING SCREEN
+========================================================= */
+
+.openingScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8fb 0%,
+            #ffe9f1 45%,
+            #ffd8e6 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+
+/* Soft glowing background */
+
+.openingGlow {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 105, 155, 0.25),
+            rgba(255, 105, 155, 0)
+        );
+
+    animation:
+        openingGlowPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes openingGlowPulse {
+
+    0%,
+    100% {
+
+        transform: scale(0.9);
+
+        opacity: 0.6;
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Opening content */
+
+.openingContent {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(90%, 650px);
+
+    text-align: center;
+
+    animation:
+        openingContentIn 1.5s ease forwards;
+
+}
+
+
+@keyframes openingContentIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* Big heart */
+
+.openingHeart {
+
+    font-size: 85px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(210, 50, 100, 0.25)
+        );
+
+    animation:
+        openingHeartBeat 1.8s ease-in-out infinite;
+
+}
+
+
+@keyframes openingHeartBeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.13);
+
+    }
+
+}
+
+
+/* Small title */
+
+.openingLabel {
+
+    margin-bottom: 12px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    color: #bd5278;
+
+}
+
+
+/* Main title */
+
+.openingContent h1 {
+
+    margin: 0;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: clamp(
+        55px,
+        8vw,
+        85px
+    );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #c63e70;
+
+    text-shadow:
+        0 5px 15px
+        rgba(198, 62, 112, 0.15);
+
+}
+
+
+/* Description */
+
+.openingText {
+
+    max-width: 430px;
+
+    margin: 20px auto 35px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #684553;
+
+}
+
+
+/* Open button */
+
+.openStoryButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 16px 30px;
+
+    border: 1px solid
+        rgba(198, 62, 112, 0.2);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6596,
+            #d83f72
+        );
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(216, 63, 114, 0.3);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.openStoryButton:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 40px
+        rgba(216, 63, 114, 0.4);
+
+}
+
+
+.openStoryButton:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+/* Heart inside button */
+
+.openHeart {
+
+    font-size: 18px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.openStoryButton:hover .openHeart {
+
+    transform:
+        scale(1.25)
+        rotate(-10deg);
+
+}
+
+
+/* =========================================================
+   OPENING EXIT ANIMATION
+========================================================= */
+
+.openingScreen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.openingScreen.hide .openingContent {
+
+    transform:
+        translateY(-25px)
+        scale(1.05);
+
+    opacity: 0;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+/* =========================================================
+   MOBILE OPENING
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .openingContent {
+
+        width: 90%;
+
+    }
+
+
+    .openingHeart {
+
+        font-size: 70px;
+
+    }
+
+
+    .openingLabel {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .openingContent h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .openingText {
+
+        font-size: 14px;
+
+        padding: 0 20px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .openStoryButton {
+
+        padding: 15px 27px;
+
+        font-size: 14px;
+
+    }
+
+}
+
+/* =========================================================
+   FINAL MOBILE OPTIMIZATION
+   FOR 1ST ANNIVERSARY
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Make sure the anniversary page can always scroll */
+
+body.letterPage {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Prevent accidental horizontal movement */
+
+html,
+body {
+    max-width: 100%;
+}
+
+
+/* Make buttons comfortable to tap on phones */
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   MOBILE LETTER
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .memorySection {
+        width: 100%;
+        min-height: 100vh;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    #letterSection {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 75px;
+        padding-bottom: 70px;
+    }
+
+
+    #letterSection .letterContainer {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+
+    #letterSection .paper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 62px 25px 50px;
+
+        transform: rotate(-0.3deg);
+    }
+
+
+    .paper::before {
+        inset: 10px;
+    }
+
+
+    .letterContent {
+        width: 100%;
+    }
+
+
+    .letterSmallTitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
+    }
+
+
+    .letterContent h1 {
+        font-size: 42px;
+        line-height: 1.15;
+        margin-bottom: 25px;
+    }
+
+
+    .letterText {
+        width: 100%;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.85;
+        text-align: left;
+        overflow: visible;
+    }
+
+
+    .romanticButton {
+        width: auto;
+        max-width: 100%;
+        min-height: 48px;
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+
+    .wax {
+        width: 58px;
+        height: 58px;
+        font-size: 23px;
+        top: -29px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    #letterSection {
+        padding-top: 65px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    #letterSection .paper {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 45px;
+    }
+
+
+    .letterContent h1 {
+        font-size: 37px;
+    }
+
+
+    .letterText {
+        font-size: 13.5px;
+        line-height: 1.8;
+    }
+
+
+    .romanticButton {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE POLAROIDS
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .memoriesSection {
+        padding-top: 65px;
+        padding-bottom: 70px;
+    }
+
+
+    .memoriesContainer {
+        width: 100%;
+    }
+
+
+    .memoriesContainer h2,
+    .finalContainer h2 {
+        font-size: 48px;
+        line-height: 1.15;
+    }
+
+
+    .sectionDescription {
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    .polaroidWall {
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        padding: 10px 0 40px;
+    }
+
+
+    .polaroid {
+        width: min(82vw, 280px);
+        padding: 10px 10px 25px;
+    }
+
+
+    .polaroid p {
+        font-size: 23px;
+        margin-top: 12px;
+    }
+
+
+    /* Disable hover behavior on touch screens */
+
+    .polaroid:hover {
+        transform: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   OPENING SCREEN — PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .openingScreen {
+        min-height: 100dvh;
+        height: 100dvh;
+        padding: 20px;
+    }
+
+
+    .openingContent {
+        width: 100%;
+        max-width: 420px;
+        padding: 0 10px;
+    }
+
+
+    .openingHeart {
+        font-size: 68px;
+        margin-bottom: 12px;
+    }
+
+
+    .openingLabel {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+
+    .openingContent h1 {
+        font-size: clamp(48px, 15vw, 65px);
+        line-height: 1.1;
+    }
+
+
+    .openingText {
+        max-width: 340px;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 18px auto 28px;
+        padding: 0;
+    }
+
+
+    .openStoryButton {
+        min-height: 50px;
+        padding: 15px 26px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SHORT PHONES
+   Example: smaller Android phones
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 700px) {
+
+    .openingContent {
+        transform: scale(.88);
+    }
+
+
+    .openingHeart {
+        margin-bottom: 5px;
+    }
+
+
+    .openingText {
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL SECTION — PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .finalSection {
+        padding-top: 65px;
+        padding-bottom: 80px;
+    }
+
+
+    .finalContainer {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 15px;
+    }
+
+
+    .finalHeart {
+        font-size: 60px;
+    }
+
+
+    .finalMessage {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+
+    .finalMessage h3 {
+        font-size: 31px;
+    }
+
+
+    .foreverMessage {
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+
+    .foreverMessage span {
+        font-size: 22px;
+    }
+
+
+    .foreverMessage p {
+        font-size: 29px;
+    }
+
+
+    .finalSignature {
+        font-size: 27px;
+        line-height: 1.3;
+        margin-top: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SAFER TOUCH INTERACTIONS
+========================================================= */
+
+.openStoryButton,
+.romanticButton {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+
+/* Remove ugly tap highlight on Android/iPhone */
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   RESPECT PHONE SAFE AREAS
+========================================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    body.letterPage {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+
+    .openingScreen {
+        padding-bottom:
+            calc(20px + env(safe-area-inset-bottom));
+    }
 
 }
